@@ -1,10 +1,12 @@
 eblib
 ====
 
-Overview
-研究で使用した異常検知用ライブラリ(Python)
+#Overview
+異常検知用ライブラリ(Python)
+
 ## Description
 部分空間法やオートエンコーダーに基づいた異常検知手法や、
+
 FFTやMFCCなど時系列データからの特徴抽出等が実装されている。
 
 ## Install
