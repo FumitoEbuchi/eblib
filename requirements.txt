@@ -1,0 +1,11 @@
+numpy
+matplotlib
+progressbar
+scikit-learn
+torch
+torchvision
+cvxopt
+librosa
+scipy
+pillow
+nolds
