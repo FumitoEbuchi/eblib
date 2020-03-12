@@ -36,7 +36,7 @@ test_bridge_wav = glob.glob(os.path.join(mydir, 'dataset/test_pieces', '*.WAV'))
 test_bridge_csv = glob.glob(os.path.join(mydir, 'dataset/test_pieces', '*.csv'))
 setup(
     name='eblib',
-    version='0.0.1',
+    version='0.1.0',
     description='Machine Learning package for Anomaly Detection',
     long_description=readme,
     author='Fumito Ebuchi',

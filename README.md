@@ -10,6 +10,9 @@ eblib
 FFTやMFCCなど時系列データからの特徴抽出等が実装されている。
 
 ## Install
+
+$ sudo apt install libsndfile1
+
 $ python setup.py sdist
 
 $ python setup.py install
