@@ -10,9 +10,9 @@ eblib
 FFTやMFCCなど時系列データからの特徴抽出等が実装されている。
 
 ## Install
-python setup.py install
+$ python setup.py sdist
 
-pip install .
+$ python setup.py install
 
 ## Contribution
 

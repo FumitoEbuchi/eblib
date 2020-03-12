@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 from eblib.load_data import TestPiece
 def TestTestPiece():
-    x,y,d = TestPiece(material='all', domain_label = True, normalize=True, num_point=2**12).load()
+    x,y,d = TestPiece(material='all', hammer='TKH270',domain_label = True, normalize=True, num_point=2**12).load()
     print(f'xsize = {x.shape}, x[5] = {x[5]}')
     print(f'ysize = {y.shape}, y[5] = {y[5]}')
     print(f'dsize = {d.shape}, d[5] = {d[5]}')
