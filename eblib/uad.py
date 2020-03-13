@@ -4,7 +4,6 @@
 
 import numpy as np
 import sys
-from progressbar import progressbar
 
 class SM(object):
     def __init__(self, eta = 0.99, r = None):
@@ -200,14 +199,14 @@ class DAE(object):
 
     def fit(self, train_X):
         self.loss_list = []
-        for epoch in progressbar(range(self.max_epoch)):
+        for epoch in range(self.max_epoch):
         #for epoch in range(self.max_epoch):
             self.loss_list.append(self._epoch_procedure(train_X))
 
     def fit_evaluate(self, train_X, test_X):
         self.train_loss_list = []
         self.test_loss_list = []
-        for epoch in progressbar(range(self.max_epoch)):
+        for epoch in range(self.max_epoch):
             self.train_loss_list.append(self._epoch_procedure(train_X))
             self.test_loss_list.append(self._cal_loss(test_X))
     
@@ -231,7 +230,7 @@ class DAE(object):
         self.model.eval()
         test_loader = torch.utils.data.DataLoader(torch.from_numpy(X), batch_size=1, shuffle=False)
         with torch.no_grad():
-            for batch_idx, inputs in progressbar(enumerate(test_loader)):
+            for batch_idx, inputs in enumerate(test_loader):
                 inputs = Variable(inputs.to(self.device)).float()
                 output = self.model(inputs)
                 output = output.cpu().data.numpy()
@@ -747,7 +746,7 @@ class VAE(DAE):
         self.model.eval()
         test_loader = torch.utils.data.DataLoader(torch.from_numpy(X), batch_size=1, shuffle=False)
         with torch.no_grad():
-            for batch_idx, inputs in progressbar(enumerate(test_loader)):
+            for batch_idx, inputs in enumerate(test_loader):
                 inputs = Variable(inputs.to(self.device)).float()
                 output, _, _ = self.model(inputs)
                 output = output.cpu().data.numpy()

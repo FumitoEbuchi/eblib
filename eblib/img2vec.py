@@ -4,7 +4,6 @@
 
 import numpy as np
 import sys
-from progressbar import progressbar
 
 import torch
 import torchvision
@@ -60,7 +59,7 @@ class CNNFeature(object):
         with torch.no_grad():
             dataset = MyDatasets(X, transform=self.data_transforms)
             loader = torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=False)
-            for batch_idx, inputs in progressbar(enumerate(loader)):
+            for batch_idx, inputs in enumerate(loader):
                 inputs = Variable(inputs.to(self.device)).float()
                 outputs = self.model(inputs).cpu().data.numpy().reshape(1,-1)
                 if batch_idx==0:

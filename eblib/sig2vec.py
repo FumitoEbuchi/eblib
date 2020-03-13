@@ -4,7 +4,6 @@
 
 import numpy as np
 import sys
-from progressbar import progressbar
 
 import torch
 import torch.nn as nn
@@ -212,7 +211,6 @@ class STFT(object):
 import os
 import time
 from PIL import Image
-from progressbar import progressbar
 
 import torch
 import torchvision
@@ -256,7 +254,7 @@ class Sig2CNN(object): #ImageNet学習済みモデルを利用した特徴抽出
         stft = STFT(fs = 1/(t[1]-t[0]), window = 'hann', nperseg = 256, noverlap=None)
         transformed_X, f, t = stft.transform(X)
         dataset = MyIterator(transformed_X)
-        for idx, inputs in progressbar(enumerate(dataset)):
+        for idx, inputs in enumerate(dataset):
             plt.figure()
             plt.pcolormesh(t,f, np.abs(inputs), vmin=0, vmax=X.max())
             plt.tick_params(labelbottom=False,
