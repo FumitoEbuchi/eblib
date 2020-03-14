@@ -1,2 +1,8 @@
 *.ods
 dataset/
+Makefile
+build/
+docs/
+dist/
+eblib.egg-info/
+tests/
